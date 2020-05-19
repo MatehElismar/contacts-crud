@@ -1,10 +1,9 @@
 import { createSchema, Type, typedModel } from "ts-mongoose";
 
 const ContactSchema = createSchema({
-  id: Type.objectId(),
-  fullName: Type.string(),
-  phoneNumber: Type.string(),
-  email: Type.string(),
+  fullName: Type.string({ required: true }),
+  phoneNumber: Type.string({ required: true }),
+  email: Type.string({ required: false }),
 });
 
 export const Contact = typedModel("Contact", ContactSchema);

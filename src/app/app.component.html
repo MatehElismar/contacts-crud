@@ -8,8 +8,80 @@
     <data-table
       title="Contacts"
       [data]="data"
-      [columns]="tableColumns"
-      [displayedColumns]="displayedColumns"
+      [options]="ngMDatatableOptions"
     ></data-table>
   </div>
 </mat-grid-list>
+
+<!-- Button trigger modal -->
+<button
+  #modalTrigger
+  [hidden]="true"
+  type="button"
+  class="btn btn-primary"
+  data-toggle="modal"
+  data-target="#contact-modal"
+>
+  Launch Contact Modal
+</button>
+
+<div class="modal" id="contact-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">
+          {{ mode == "add" ? "Add" : "Update" }} a Contact
+        </h2>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="contactForm">
+          <div class="row">
+            <div class="col-md-6">
+              <mat-form-field class="example-full-width">
+                <mat-label>Full Name</mat-label>
+                <input matInput formControlName="fullName" type="text" />
+                <mat-hint></mat-hint>
+                <mat-error>{{ formErrors["fullName"] }}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field class="example-full-width">
+                <mat-label>Phone Number</mat-label>
+                <input matInput formControlName="phoneNumber" type="text" />
+                <mat-hint></mat-hint>
+                <mat-error>{{ formErrors["phoneNumber"] }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" type="text" />
+                <mat-hint></mat-hint>
+                <mat-error>{{ formErrors["email"] }}</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <mat-error>{{ formErrors["process"] }}</mat-error>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+        <button (click)="saveContact()" type="button" class="btn btn-primary">
+          {{ mode == "add" ? "Add" : "Update" }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

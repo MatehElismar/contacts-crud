@@ -1,6 +1,8 @@
 import { connect } from "mongoose";
 
 const url = process.env.DB_URL || "";
+
+// Method that establishes connection with the mongodb database.
 export async function startDBConnection() {
   await connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((dbInfo) => {

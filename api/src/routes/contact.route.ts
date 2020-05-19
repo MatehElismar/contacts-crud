@@ -4,7 +4,7 @@ import { ContactCtrl } from "../controllers";
 export const contactRoutes = Router();
 
 contactRoutes
-  .route("/")
+  .route("/:id?")
   .get(ContactCtrl.get)
   .post(ContactCtrl.post)
   .put(ContactCtrl.put)
