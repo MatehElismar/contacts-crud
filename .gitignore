@@ -7,8 +7,8 @@
 # Only exists if Bazel was run
 /bazel-out
 .vscode/
-api/dist/
-api/node_modules/
+/api/dist/
+/api/node_modules/
 
 # dependencies
 /node_modules
