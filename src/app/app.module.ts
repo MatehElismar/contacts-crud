@@ -13,9 +13,12 @@ import { MatInputModule } from "@angular/material/input";
 import { MatDialogModule } from "@angular/material/dialog";
 import { DialogComponent } from "./components/dialog/dialog.component";
 import { MatButtonModule } from "@angular/material/button";
+import { CalificacionesComponent } from './calificaciones/calificaciones.component';
+import { AsistenciaComponent } from './asistencia/asistencia.component';
+import { MateriasComponent } from './materias/materias.component';
 
 @NgModule({
-  declarations: [AppComponent, DialogComponent],
+  declarations: [AppComponent, DialogComponent, CalificacionesComponent, AsistenciaComponent, MateriasComponent],
   imports: [
     BrowserModule,
     MatFormFieldModule,

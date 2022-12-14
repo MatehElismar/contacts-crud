@@ -46,7 +46,7 @@ export class AppComponent extends FormComponentBase
   @ViewChild(NgMDatatable)
   Datatable: NgMDatatable<ContactData>;
   ngMDatatableOptions: NgMDatatableOptions<ContactData> = {
-    title: "My Contacts",
+    title: "Estudiantes",
     columns: [
       { id: "fullName", text: "Name" },
       { id: "phoneNumber", text: "Phone Number" },

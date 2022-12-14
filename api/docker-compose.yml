@@ -1,0 +1,9 @@
+version: "3.5"
+
+services:
+  db:
+    image: mongo:4.4
+    container_name: crud-mongo
+    restart: always
+    ports:
+      - 27017:27017
