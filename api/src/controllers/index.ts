@@ -1,1 +1,1 @@
-export * from "./contact.ctrl";
+export * from "./student.ctrl";
